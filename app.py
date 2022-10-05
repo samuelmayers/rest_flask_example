@@ -1,7 +1,6 @@
 from flask import Flask, render_template, redirect, request, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-import json
 from db import db, ma
 from model import Form , FormSchema
 import os
