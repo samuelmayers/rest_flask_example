@@ -11,13 +11,30 @@
 <body>
     <main>
         <form action="/add" method="POST">
-            <input type="text" name="fullname" placeholder="Fullname">
-            <input type="text" name="phone" placeholder="Phone">
-            <input type="text" name="email" placeholder="Email">
+            <label for="fullname">Write your fullname:</label>
+            <input type="text" name="fullname" placeholder="Fullname" class="form-control bg-dark text-white rounded-0">
+            <label for="email">Write your email:</label>
+            <input type="text" name="phone" placeholder="Phone" class="form-control bg-dark text-white rounded-0">
+            <label for="phone">Write your phone:</label>
+            <input type="text" name="email" placeholder="Email" class="form-control bg-dark text-white rounded-0">
             <button type="submit">
                 save
             </button>
         </form>
+        <div>
+            {% for form in forms %}
+            <tr>
+                <td>{{form.id}}</td>
+                <td>{{form.fullname}}</td>
+                <td>{{form.phone}}</td>
+                <td>{{form.email}}</td>
+                <td>
+                  <a href="/edit/{{form.id}}" class="btn btn-secondary">edit</a>
+                  <a href="/delete/{{form.id}}" class="btn btn-danger btn-delete">delete</a>
+                </td>
+              </tr>
+            {% endfor %}
+        </div>
     </main>
 </body>
 </html>
