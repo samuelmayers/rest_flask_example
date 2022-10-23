@@ -7,7 +7,13 @@ import os
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] ="sqlite:///"+dir_path+r"\formulario.db"
+app.config['SQLALCHEMY_DATABASE_URI'] ='{}://{}:{}@{}/{}'.format(
+    os.getenv('DB', 'postgresql'),
+    os.getenv('DBUSER', 'oxqwwxylkt'),
+    os.getenv('DBPASS', ''),
+    os.getenv('DBHOST', 'rest-flask-server'),
+    os.getenv('DBNAME', 'postgres')
+)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 SQLAlchemy(app)
 Marshmallow(app)
