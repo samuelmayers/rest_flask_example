@@ -7,11 +7,11 @@ import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] ='{}://{}:{}@{}/{}'.format(
-    os.getenv('DB', 'postgresql'),
-    os.getenv('DBUSER', 'oxqwwxylkt'),
+    os.getenv('DB', 'mysql'),
+    os.getenv('DBUSER', 'rest'),
     os.getenv('DBPASS', ''),
-    os.getenv('DBHOST', 'rest-flask-server'),
-    os.getenv('DBNAME', 'postgres')
+    os.getenv('DBHOST', 'rest.mysql.database.azure.com'),
+    os.getenv('DBNAME', 'mysql')
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 SQLAlchemy(app)
