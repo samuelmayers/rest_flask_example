@@ -5,7 +5,6 @@ from db import db, ma
 from model import Form , FormSchema
 import os
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] ='{}://{}:{}@{}/{}'.format(
     os.getenv('DB', 'postgresql'),
@@ -67,4 +66,4 @@ def api(id):
     return jsonify({"Form":op})
 
 if __name__ == '__main__':
-    app.run(port=8000,debug=True)
+    app.run(port=80,debug=True)
