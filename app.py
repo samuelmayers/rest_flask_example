@@ -7,11 +7,12 @@ import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] ='{}://{}:{}@{}/{}'.format(
-    os.getenv('DB', 'mysql'),
-    os.getenv('DBUSER', 'rest'),
-    os.getenv('DBPASS', ''),
-    os.getenv('DBHOST', 'rest.mysql.database.azure.com'),
-    os.getenv('DBNAME', 'mysql')
+    os.getenv('DB', 'postgresql'),
+    os.getenv('PGUSER', 'postgres'),
+    os.getenv('PGPASSWORD', ''),
+    os.getenv('PGHOST', 'containers-us-west-84.railway.app'),
+    os.getenv('PGPORT', '7641')
+    os.getenv('PGDATABASE', 'railway')
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 SQLAlchemy(app)
