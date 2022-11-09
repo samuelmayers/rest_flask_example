@@ -5,15 +5,15 @@ from db import db, ma
 from model import Form , FormSchema
 import os
 
+PGUSER = os.getenv('PGUSER', default='postgres')
+PGPASSWORD = os.getenv('PGPASSWORD', default='')
+PGHOST = os.getenv('PGHOST', default='containers-us-west-104.railway.app')
+PGPORT = os.getenv('PGPORT', default='5526')
+PGDATABASE = os.getenv('PGDATABASE', default='railway')
+
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] ='{}://{}:{}@{}/{}'.format(
-    os.getenv('DB', default='postgresql'),
-    os.getenv('PGUSER', default='postgres'),
-    os.getenv('PGPASSWORD', default=''),
-    os.getenv('PGHOST', default='containers-us-west-104.railway.app'),
-    os.getenv('PGPORT', default='5526')
-    os.getenv('PGDATABASE', default='railway')
-)
+app.config['SQLALCHEMY_DATABASE_URI'] =f'postgresql://{PGUSER}:{PGPASSWORD}@{PGHOST}:{PGPORT}/{PGDATABASE}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 SQLAlchemy(app)
 Marshmallow(app)
