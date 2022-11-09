@@ -6,7 +6,7 @@ from model import Form , FormSchema
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] ="postgresql://postgres:Y7rIFjrCMOYdrM4QRxkR@containers-us-west-104.railway.app:5526/railway"
+app.config['SQLALCHEMY_DATABASE_URI'] ="mysql://root:2vwH2fqDA5WkTkvTFCrj@containers-us-west-26.railway.app:6442/railway"
 #f"postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:5526/${{ PGDATABASE }}"
 #'postgresql://postgres:Y7rIFjrCMOYdrM4QRxkR@containers-us-west-104.railway.app:5526/railway'
 
