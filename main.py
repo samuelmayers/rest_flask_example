@@ -6,7 +6,7 @@ from model import Form , FormSchema
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] ='postgresql://postgres:Y7rIFjrCMOYdrM4QRxkR@containers-us-west-104.railway.app:5526/railway'
+app.config['SQLALCHEMY_DATABASE_URI'] ='postgresql+pyscopg2://postgres:Y7rIFjrCMOYdrM4QRxkR@containers-us-west-104.railway.app:5526/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 SQLAlchemy(app)
 Marshmallow(app)
