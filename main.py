@@ -10,8 +10,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] ='{}://{}:{}@{}/{}'.format(
     os.getenv('DB', default='postgresql'),
     os.getenv('PGUSER', default='postgres'),
     os.getenv('PGPASSWORD', default=''),
-    os.getenv('PGHOST', default='containers-us-west-84.railway.app'),
-    os.getenv('PGPORT', default='7641')
+    os.getenv('PGHOST', default='containers-us-west-104.railway.app'),
+    os.getenv('PGPORT', default='5526')
     os.getenv('PGDATABASE', default='railway')
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
