@@ -11,6 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] ="postgresql://postgres:Y7rIFjrCMOYdrM4QRx
 #'postgresql://postgres:Y7rIFjrCMOYdrM4QRxkR@containers-us-west-104.railway.app:5526/railway'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db.init_app(app)
 SQLAlchemy(app)
 Marshmallow(app)
 
