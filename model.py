@@ -2,7 +2,7 @@ from flask_sqlalchemy import Model
 from db import db, ma
 
 class Form(db.Model):
-    __bind_key__ = 'form'
+    __bind_key__ = 'None'
     id=db.Column(db.Integer, primary_key=True)
     fullname=db.Column(db.String(200),nullable=False)
     phone=db.Column(db.String(200),nullable=False)
