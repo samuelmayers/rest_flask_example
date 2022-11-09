@@ -70,4 +70,4 @@ def api(id):
     return jsonify({"Form":op})
 
 if __name__ == '__main__':
-    app.run(port=80,debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
