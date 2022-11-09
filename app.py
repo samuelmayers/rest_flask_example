@@ -7,12 +7,12 @@ import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] ='{}://{}:{}@{}/{}'.format(
-    os.getenv('DB', 'postgresql'),
-    os.getenv('PGUSER', 'postgres'),
-    os.getenv('PGPASSWORD', ''),
-    os.getenv('PGHOST', 'containers-us-west-84.railway.app'),
-    os.getenv('PGPORT', '7641')
-    os.getenv('PGDATABASE', 'railway')
+    os.getenv('DB', default='postgresql'),
+    os.getenv('PGUSER', default='postgres'),
+    os.getenv('PGPASSWORD', default=''),
+    os.getenv('PGHOST', default='containers-us-west-84.railway.app'),
+    os.getenv('PGPORT', default='7641')
+    os.getenv('PGDATABASE', default='railway')
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 SQLAlchemy(app)
