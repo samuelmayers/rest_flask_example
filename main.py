@@ -6,9 +6,7 @@ from model import Form , FormSchema
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] ="postgresql://postgres:Aj03MCL2sETVgamf9Ook@containers-us-west-86.railway.app:6900/railway"
-#f"postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:5526/${{ PGDATABASE }}"
-#'postgresql://postgres:Aj03MCL2sETVgamf9Ook@containers-us-west-86.railway.app:6900/railway'
+app.config['SQLALCHEMY_DATABASE_URI'] ="sqlite:///project.db"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
